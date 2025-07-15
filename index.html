@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="timer-container">
+            <div class="timer-display" id="game-timer">1:00</div>
+            <div class="timer-controls">
+                <button class="timer-btn" onclick="startTimer()">START</button>
+                <button class="timer-btn" onclick="pauseTimer()">PAUSE</button>
+                <button class="timer-btn" onclick="resetTimer()">RESET</button>
+            </div>
+        </div>
+        <div class="display-container">
+            <div>
+                <h3 class='title'>HOME</h3>
+                <p id="home-score" class="score">0</p>
+                <div class="foul-section">
+                    <span class="foul-text">FOULS <span id="home-fouls" class="foul-number">0</span></span>
+                    <button class="foul-btn" onclick="addFoulHome()">FOUL</button>
+                </div>
+                <div class="button-container">
+                    <button class="score-btn" onclick="addOneHome()">+1</button>
+                    <button class="score-btn" onclick="addTwoHome()">+2</button>
+                    <button class="score-btn" onclick="addThreeHome()">+3</button>
+                </div>
+            </div>
+            <div class="period-container">
+                <span class="period-text">PERIOD</span> 
+                <span id="current-period">1</span>
+                <button id="next-period-btn" onclick="nextPeriod()">Next Period</button> 
+            </div>
+            <div>
+                <h3 class='title'>GUEST</h3>
+                <p id="guest-score" class="score">0</p>
+                <div class="foul-section">
+                    <span class="foul-text">FOULS <span id="guest-fouls" class="foul-number">0</span></span>
+                    <button class="foul-btn" onclick="addFoulGuest()">FOUL</button>
+                </div>
+                <div class="button-container">
+                    <button class="score-btn" onclick="addOneGuest()">+1</button>
+                    <button class="score-btn" onclick="addTwoGuest()">+2</button>
+                    <button class="score-btn" onclick="addThreeGuest()">+3</button>
+                </div>
+            </div>
+        </div>
+        <button id="new-game-btn" onclick="newGame()">New Game</button>
+        <script src="index.js"></script>
+    </body>
+</html>
