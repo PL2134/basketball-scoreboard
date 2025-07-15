@@ -1,196 +1,264 @@
+/* ==========================================
+   BASKETBALL SCOREBOARD - CSS STYLES
+   ========================================== */
+
+/* ==========================================
+   CUSTOM FONT IMPORT
+   ========================================== */
 @font-face {
     font-family: 'Cursed Timer';
     src: url('CursedTimerUlil-Aznm.ttf') format('truetype');
 }
 
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
+/* Reset default browser margins and set background */
 body {
     margin: 0;
-    background-color: #1B244A;
+    background-color: #1B244A;  /* Dark blue background */
+    padding: 20px 0;            /* Add top/bottom padding for breathing room */
 }
 
+/* Make all buttons show pointer cursor on hover */
 button {
     cursor: pointer;
 }
 
+/* ==========================================
+   MAIN LAYOUT CONTAINER
+   ========================================== */
+
+/* Three-column layout for HOME | PERIOD | GUEST */
 .display-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 20px 5px 20px;
-    min-height: calc(100vh - 136px);
+    display: flex;                    /* Use flexbox for horizontal layout */
+    justify-content: space-around;    /* Distribute columns evenly */
+    padding: 15px 20px 5px 20px;     /* Internal spacing */
 }
 
+/* ==========================================
+   TEAM TITLES (HOME/GUEST)
+   ========================================== */
+
+/* Styling for "HOME" and "GUEST" text */
 .title {
-    color: #EEEEEE;
-    font-family: Verdana;
-    font-weight: 700;
+    color: #EEEEEE;           /* Light gray/white text */
+    font-family: Verdana;     /* Clean, readable font */
+    font-weight: 700;         /* Bold text */
     font-style: Bold;
-    font-size: 40px;
+    font-size: 40px;          /* Large, prominent size */
     line-height: 35.89px;
-    text-align: center;
-    margin-bottom: 21px;
+    text-align: center;       /* Center-align the text */
+    margin-bottom: 21px;      /* Space below title */
 }
 
+/* ==========================================
+   SCORE DISPLAYS
+   ========================================== */
+
+/* Main score numbers for both teams */
 .score {
-    font-family: 'Cursed Timer', monospace;
-    color: #F94F6D;
-    background-color: #080001;
-    width: 155px;
-    height: 120px;
-    border-radius: 5px;
+    font-family: 'Cursed Timer', monospace;  /* Digital/LED-style font */
+    color: #F94F6D;                          /* Bright red text */
+    background-color: #080001;               /* Almost black background */
+    width: 155px;                            /* Fixed width for consistency */
+    height: 120px;                           /* Fixed height for consistency */
+    border-radius: 5px;                      /* Slightly rounded corners */
     font-weight: 400;
     font-style: Regular;
-    font-size: 90px;
-    line-height: 126.67px;
-    text-align: center;
+    font-size: 90px;                         /* Large, prominent numbers */
+    line-height: 126.67px;                   /* Vertical text positioning */
+    text-align: center;                      /* Center the numbers */
     margin-top: 0;
-    margin-bottom: 26px;
+    margin-bottom: 26px;                     /* Space below score */
 }
 
+/* ==========================================
+   SCORING BUTTONS (+1, +2, +3)
+   ========================================== */
 
+/* Individual scoring buttons */
 .score-btn {
-    font-family: 'Cursed Timer', monospace;
-    color: #9AABD8;
-    background-color: transparent;
-    border: 2px solid #9AABD8;
-    width: 45px;
+    font-family: 'Cursed Timer', monospace;  /* Match scoreboard font */
+    color: #9AABD8;                          /* Light blue text */
+    background-color: transparent;           /* No background fill */
+    border: 2px solid #9AABD8;              /* Light blue border */
+    width: 45px;                             /* Square-ish buttons */
     height: 45px;
-    border-radius: 5px;
+    border-radius: 5px;                      /* Slightly rounded corners */
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 18px;                         /* Readable button text */
     line-height: 27.81px;
     text-align: center;
     margin: 0;
 }
 
+/* Container for the three scoring buttons */
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 155px;
+    display: flex;                /* Horizontal layout */
+    justify-content: space-between; /* Spread buttons evenly */
+    width: 155px;                 /* Match width of score display */
 }
 
+/* ==========================================
+   NEW GAME BUTTON
+   ========================================== */
+
+/* Reset button at bottom of scoreboard */
 #new-game-btn {
-    display: block;
-    margin: 0px auto;
-    padding: 10px 24px;
-    background-color: #F94F6D;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-family: 'Cursed Timer', monospace;    
-    font-size: 18px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    display: block;               /* Block element for centering */
+    margin: 0px auto;             /* Center horizontally */
+    padding: 10px 24px;           /* Internal spacing */
+    background-color: #F94F6D;    /* Bright red background (matches score color) */
+    border-radius: 5px;           /* Rounded corners */
+    color: #FFFFFF;               /* White text */
+    font-family: 'Cursed Timer', monospace; /* Match scoreboard font */
+    font-size: 18px;              /* Readable size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
+/* ==========================================
+   LEADER HIGHLIGHTING
+   ========================================== */
+
+/* Special styling for the team that's currently winning */
 .score.leading {
-    box-shadow: 0 0 20px rgba(249, 79, 109, 0.6);
+    box-shadow: 0 0 20px rgba(249, 79, 109, 0.6); /* Red glow effect */
 }
 
+/* ==========================================
+   PERIOD SECTION (CENTER COLUMN)
+   ========================================== */
+
+/* Container for period display and controls */
 .period-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
+    flex-direction: column;    /* Stack elements vertically */
+    justify-content: center;   /* Center vertically within container */
+    align-items: center;       /* Center horizontally */
+    margin: 40px 30px 0 30px;  /* Positioning: push down and add side spacing */
 }
 
+/* "PERIOD" label text */
 .period-text {
-    color: #EEEEEE;
-    font-family: Verdana;
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 20px;
+    color: #EEEEEE;           /* Light gray/white text */
+    font-family: Verdana;     /* Match team title font */
+    font-weight: 700;         /* Bold text */
+    font-size: 20px;          /* Readable size */
+    margin-bottom: 20px;      /* Space below label */
 }
 
+/* Period number display (1, 2, 3, 4, OT, etc.) */
 #current-period {
-    font-family: 'Cursed Timer', monospace;
-    color: #F94F6D;
-    background-color: #080001;
-    width: 90px;
-    height: 60px;
-    border-radius: 5px;
+    font-family: 'Cursed Timer', monospace;  /* Digital style font */
+    color: #F94F6D;                          /* Bright red text */
+    background-color: #080001;               /* Almost black background */
+    width: 80px;                             /* Smaller than main scores */
+    height: 60px;                            /* Smaller than main scores */
+    border-radius: 5px;                      /* Rounded corners */
     font-weight: 400;
-    font-size: 40px;
+    font-size: 40px;                         /* Medium size number */
     margin-top: 0;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 4px;
+    margin-bottom: 20px;                     /* Space below number */
+    display: flex;                           /* Use flexbox for perfect centering */
+    align-items: center;                     /* Center vertically */
+    justify-content: center;                 /* Center horizontally */
+    padding-top: 4px;                        /* Fine-tune vertical position */
 }
 
+/* "Next Period" button */
 #next-period-btn {
-    padding: 8px 16px;
-    background-color: transparent;
-    border: 2px solid #9AABD8;
-    border-radius: 5px;
-    color: #9AABD8;
-    font-family: 'Cursed Timer', monospace;
-    font-size: 14px;
+    padding: 8px 16px;                       /* Internal spacing */
+    background-color: transparent;           /* No background fill */
+    border: 2px solid #9AABD8;              /* Light blue border */
+    border-radius: 5px;                      /* Rounded corners */
+    color: #9AABD8;                         /* Light blue text */
+    font-family: 'Cursed Timer', monospace; /* Match scoreboard font */
+    font-size: 14px;                         /* Readable size */
 }
 
+/* ==========================================
+   FOUL TRACKING SECTION
+   ========================================== */
+
+/* Container for foul display and button */
 .foul-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
+    display: flex;              /* Horizontal layout */
+    align-items: center;        /* Align vertically */
+    justify-content: center;    /* Center horizontally */
+    margin-bottom: 15px;        /* Space below section */
 }
 
+/* "FOULS:" label text */
 .foul-text {
-    color: #EEEEEE;
-    font-family: Verdana;
-    font-weight: 700;
-    font-size: 16px;
-    margin-right: 10px;
+    color: #EEEEEE;            /* Light gray/white text */
+    font-family: Verdana;      /* Match other labels */
+    font-weight: 700;          /* Bold text */
+    font-size: 16px;           /* Readable size */
+    margin-right: 10px;        /* Space to the right */
 }
 
+/* "FOUL" button to add fouls */
 .foul-btn {
-    padding: 4px 8px;
-    background-color: transparent;
-    border: 1px solid #9AABD8;
-    border-radius: 3px;
-    color: #9AABD8;
-    font-family: 'Cursed Timer', monospace;
-    font-size: 12px;
+    padding: 4px 8px;                        /* Internal spacing */
+    background-color: transparent;           /* No background fill */
+    border: 1px solid #9AABD8;              /* Thin light blue border */
+    border-radius: 3px;                      /* Small rounded corners */
+    color: #9AABD8;                         /* Light blue text */
+    font-family: 'Cursed Timer', monospace; /* Match scoreboard font */
+    font-size: 12px;                         /* Small button text */
 }
 
+/* Foul number display (small digital display) */
 .foul-number {
-    font-family: 'Cursed Timer', monospace;
-    color: #F94F6D;
-    background-color: #080001;
-    border-radius: 3px;
-    padding: 2px 6px;
-    display: inline-block;
-    padding-top: 4px;
+    font-family: 'Cursed Timer', monospace;  /* Digital style font */
+    color: #F94F6D;                          /* Bright red text */
+    background-color: #080001;               /* Almost black background */
+    border-radius: 3px;                      /* Small rounded corners */
+    padding: 2px 6px;                        /* Internal spacing */
+    display: inline-block;                   /* Inline but with block properties */
+    padding-top: 4px;                        /* Fine-tune vertical position */
 }
 
+/* ==========================================
+   TIMER SECTION (TOP OF SCOREBOARD)
+   ========================================== */
+
+/* Container for timer and controls */
 .timer-container {
-    text-align: center;
-    margin-top: 15px;
+    text-align: center;         /* Center everything horizontally */
+    margin-top: 15px;           /* Space from top of page */
+    margin-bottom: 15px;        /* Space below timer */
 }
 
+/* Main timer display */
 .timer-display {
-    font-family: 'Cursed Timer', monospace;
-    color: #F94F6D;
-    background-color: #080001;
-    font-size: 60px;
-    padding: 20px 30px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    display: inline-block;
+    font-family: 'Cursed Timer', monospace;  /* Digital style font */
+    color: #F94F6D;                          /* Bright red text */
+    background-color: #080001;               /* Almost black background */
+    font-size: 60px;                         /* Large, prominent timer */
+    padding: 20px 30px;                      /* Internal spacing */
+    border-radius: 10px;                     /* Rounded corners */
+    margin-bottom: 15px;                     /* Space below timer */
+    display: inline-block;                   /* Inline but with block properties */
 }
 
+/* Container for timer control buttons */
 .timer-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    display: flex;              /* Horizontal layout */
+    justify-content: center;    /* Center the buttons */
+    gap: 10px;                  /* Space between buttons */
 }
 
+/* Timer control buttons (START, PAUSE, RESET) */
 .timer-btn {
-    font-family: 'Cursed Timer', monospace;
-    background-color: transparent;
-    border: 2px solid #9AABD8;
-    color: #9AABD8;
-    padding: 6px 12px;
-    border-radius: 5px;
-    font-size: 12px;
+    font-family: 'Cursed Timer', monospace;  /* Match scoreboard font */
+    background-color: transparent;           /* No background fill */
+    border: 2px solid #9AABD8;              /* Light blue border */
+    color: #9AABD8;                         /* Light blue text */
+    padding: 6px 12px;                       /* Internal spacing */
+    border-radius: 5px;                      /* Rounded corners */
+    font-size: 12px;                         /* Small button text */
 }

@@ -1,50 +1,108 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <!-- Link to external CSS stylesheet -->
         <link rel="stylesheet" href="index.css">
     </head>
+    
     <body>
+        <!-- ==========================================
+             TIMER SECTION - Top of scoreboard
+             ========================================== -->
         <div class="timer-container">
+            <!-- Main timer display showing game time -->
             <div class="timer-display" id="game-timer">1:00</div>
+            
+            <!-- Timer control buttons -->
             <div class="timer-controls">
                 <button class="timer-btn" onclick="startTimer()">START</button>
                 <button class="timer-btn" onclick="pauseTimer()">PAUSE</button>
                 <button class="timer-btn" onclick="resetTimer()">RESET</button>
             </div>
         </div>
+
+        <!-- ==========================================
+             MAIN SCOREBOARD LAYOUT
+             Three-column layout: HOME | PERIOD | GUEST
+             ========================================== -->
         <div class="display-container">
+            
+            <!-- ==========================================
+                 HOME TEAM SECTION - Left column
+                 ========================================== -->
             <div>
+                <!-- Team name/title -->
                 <h3 class='title'>HOME</h3>
+                
+                <!-- Main score display -->
                 <p id="home-score" class="score">0</p>
+                
+                <!-- Foul tracking section -->
                 <div class="foul-section">
-                    <span class="foul-text">FOULS <span id="home-fouls" class="foul-number">0</span></span>
+                    <!-- Foul count display -->
+                    <span class="foul-text">FOULS: <span id="home-fouls" class="foul-number">0</span></span>
+                    <!-- Button to add fouls -->
                     <button class="foul-btn" onclick="addFoulHome()">FOUL</button>
                 </div>
+                
+                <!-- Scoring buttons -->
                 <div class="button-container">
-                    <button class="score-btn" onclick="addOneHome()">+1</button>
-                    <button class="score-btn" onclick="addTwoHome()">+2</button>
-                    <button class="score-btn" onclick="addThreeHome()">+3</button>
+                    <button class="score-btn" onclick="addOneHome()">+1</button>     <!-- Free throw -->
+                    <button class="score-btn" onclick="addTwoHome()">+2</button>     <!-- Field goal -->
+                    <button class="score-btn" onclick="addThreeHome()">+3</button>   <!-- Three-pointer -->
                 </div>
             </div>
+            
+            <!-- ==========================================
+                 PERIOD SECTION - Center column
+                 ========================================== -->
             <div class="period-container">
+                <!-- Period label -->
                 <span class="period-text">PERIOD</span> 
-                <span id="current-period">1</span>
+                
+                <!-- Current period display (1, 2, 3, 4, OT, 2OT, etc.) -->
+                <span id="current-period" class="score">1</span>
+                
+                <!-- Button to advance to next period -->
                 <button id="next-period-btn" onclick="nextPeriod()">Next Period</button> 
             </div>
+            
+            <!-- ==========================================
+                 GUEST TEAM SECTION - Right column
+                 ========================================== -->
             <div>
+                <!-- Team name/title -->
                 <h3 class='title'>GUEST</h3>
+                
+                <!-- Main score display -->
                 <p id="guest-score" class="score">0</p>
+                
+                <!-- Foul tracking section -->
                 <div class="foul-section">
-                    <span class="foul-text">FOULS <span id="guest-fouls" class="foul-number">0</span></span>
+                    <!-- Foul count display -->
+                    <span class="foul-text">FOULS: <span id="guest-fouls" class="foul-number">0</span></span>
+                    <!-- Button to add fouls -->
                     <button class="foul-btn" onclick="addFoulGuest()">FOUL</button>
                 </div>
+                
+                <!-- Scoring buttons -->
                 <div class="button-container">
-                    <button class="score-btn" onclick="addOneGuest()">+1</button>
-                    <button class="score-btn" onclick="addTwoGuest()">+2</button>
-                    <button class="score-btn" onclick="addThreeGuest()">+3</button>
+                    <button class="score-btn" onclick="addOneGuest()">+1</button>    <!-- Free throw -->
+                    <button class="score-btn" onclick="addTwoGuest()">+2</button>    <!-- Field goal -->
+                    <button class="score-btn" onclick="addThreeGuest()">+3</button>  <!-- Three-pointer -->
                 </div>
             </div>
         </div>
+        
+        <!-- ==========================================
+             GAME CONTROLS - Bottom of scoreboard
+             ========================================== -->
+        <!-- Button to reset entire game back to starting state -->
         <button id="new-game-btn" onclick="newGame()">New Game</button>
+        
+        <!-- ==========================================
+             JAVASCRIPT - Link to external script file
+             ========================================== -->
         <script src="index.js"></script>
     </body>
 </html>
