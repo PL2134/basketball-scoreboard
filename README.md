@@ -4,7 +4,7 @@ A fully functional basketball scoreboard web application built from scratch as p
 
 ## 🚀 Live Demo
 
-**[View Live Project]** - *[I will add Netlify deployment link here]*
+**[View Live Project](https://basketball-scoreboard-pl.netlify.app/)**
 
 ## 📖 Project Overview
 
